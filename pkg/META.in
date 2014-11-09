@@ -1,0 +1,9 @@
+package codec (
+  version = "%{version}%"
+  description = "A Protocol Buffers codec"
+  archive(byte) = "protobuf_codec.cma"
+  archive(byte, plugin) = "protobuf_codec.cma"
+  archive(native) = "protobuf_codec.cmxa"
+  archive(native, plugin) = "protobuf_codec.cmxs"
+  exists_if = "protobuf_codec.cma"
+)
