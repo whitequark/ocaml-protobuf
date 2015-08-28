@@ -106,8 +106,12 @@ let test_overflow ctxt =
                 (fun () -> Encoder.int32_of_int64 "" 0x1ffffffffL);
   ()
 
+let test_not_overflow ctxt = 
+  assert_equal (- 1) (Decoder.int_of_int64 "" (-1L)) 
+
 let suite = "Test Protobuf_codec" >::: [
     "test_decoder"  >:: test_decoder;
     "test_encoder"  >:: test_encoder;
     "test_overflow" >:: test_overflow;
+    "test_not_overflow" >:: test_not_overflow;
   ]
